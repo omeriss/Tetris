@@ -1,10 +1,12 @@
 #pragma once
+#include <iostream>
+
 
 #define BoardW 10
 #define BoardH 20
 #define TileSize 50
-#define InputInterval 0.2f
-extern int moveInterval;
+#define InputInterval 0.15f
+extern float moveInterval;
 
 #define Color0 sf::Color(0, 255, 255)
 #define Color1 sf::Color(0, 0, 255)

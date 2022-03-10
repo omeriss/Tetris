@@ -12,11 +12,12 @@ void LocalUserBoard::Update(float deltaTime)
 			curPice.Move({ -1, 0 }, board);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)) {
-			curPice.Move({ 0, 1 }, board);
-			timeToMove = 0;
+			if(curPice.Move({ 0, 1 }, board))
+				timeToMove = 0;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space)) {
-
+			while(curPice.Move({ 0, 1 }, board)){}
+			timeToMove = moveInterval;
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::X)) {
 			curPice.Rotate(true, board);
@@ -28,8 +29,12 @@ void LocalUserBoard::Update(float deltaTime)
 	}
 	if (timeToMove >= moveInterval) {
 		if (!curPice.Move({ 0, 1 }, board)) {
-			curPice.CopyToBoard(board);
+			if (!curPice.CopyToBoard(board)) {
+				std::cout << "You suck\n";
+				while(true){}
+			}
 			curPice = Piece();
+			CleanBoard();
 		}
 
 		timeToMove = 0;

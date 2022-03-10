@@ -11,7 +11,7 @@ public:
 	bool Move(sf::Vector2i dir, vector<vector<Tile*>>& board);
 	bool Rotate(bool dir, vector<vector<Tile*>>& board);
 	void Draw(sf::RenderWindow& window);
-	void CopyToBoard(vector<vector<Tile*>>& board);
+	bool CopyToBoard(vector<vector<Tile*>>& board);
 private:
 	std::vector<Tile> tiles;
 	sf::Vector2i position;

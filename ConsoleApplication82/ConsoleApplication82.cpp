@@ -1,7 +1,7 @@
 #include "LocalUserBoard.h"
 
 vector<std::pair<std::vector<Tile>, sf::Vector2f>> Piece::pices = PiecesVector;
-int moveInterval = 1;
+float moveInterval = 1;
 
 int main()
 {

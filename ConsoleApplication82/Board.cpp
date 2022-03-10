@@ -24,4 +24,26 @@ void Board::Draw(sf::RenderWindow& window)
 
 void Board::CleanBoard()
 {
+	int downCount = 0;
+	int r = board.size();
+	for (int i = r-1; i >= 0; i--) {
+		int j, c = board[i].size();
+		for (j = 0; j < c; j++) {
+			if (!board[i][j])
+				break;
+		}
+		if (j == c) {
+			downCount++;
+			for (j = 0; j < c; j++) {
+				if (board[i][j])
+					delete board[i][j];
+				board[i][j] = NULL;
+			}
+		}
+		else {
+			for (j = 0; j < c; j++) {
+				std::swap(board[i + downCount][j], board[i][j]);
+			}
+		}
+	}
 }

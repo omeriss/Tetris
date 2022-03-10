@@ -26,7 +26,7 @@ void Tile::ReSetPosition()
 void Tile::Rotate(bool dir, sf::Vector2f origin)
 {
 	origin -= {0.5, 0.5};
-	int t = dir;
+	int t = !dir;
 	t = t * 2 - 1;
 	position = {(position.y-origin.y) *t + origin.y, (position.x - origin.x) * -t + origin.x};
 }
