@@ -8,7 +8,7 @@ int main()
     srand(time(NULL));
     sf::Clock c;
     LocalUserBoard p({ 50 * 10, 50 * 20 });
-    sf::RenderWindow window(sf::VideoMode(50*10, 50*20), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode(50*10, 50*20), "TETRIS");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 

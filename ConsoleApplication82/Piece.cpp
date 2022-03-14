@@ -8,7 +8,7 @@ Piece::Piece(int piceType)
 	this->tiles = pices[piceType].first;
 	this->origin = pices[piceType].second;
 	this->position.x = BoardW / 2.0 - origin.x / 2.0;
-	this->position.y = -3;
+	this->position.y = -2;
 }
 
 bool Piece::Move(sf::Vector2i dir, vector<vector<Tile*>>& board)
